@@ -299,6 +299,7 @@ build.gradle
 gradlew
 gradlew.bat
 settings.gradle
+gradle/wrapper/*
 
 
 # End of https://www.toptal.com/developers/gitignore/api/java,intellij+all,intellij+iml,gradle,maven,sonar,sonarqube,macos,windows
