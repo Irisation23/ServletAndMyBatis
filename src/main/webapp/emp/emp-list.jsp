@@ -13,7 +13,7 @@
     </script>
 </head>
 <%
-    List<Employees> list = (List<Employees>) request.getAttribute("list");
+    List<Employees> empList = (List<Employees>) request.getAttribute("empList");
 %>
 <body>
 <h1>Employee List</h1>
@@ -33,7 +33,7 @@
     </tr>
     </thead>
     <tbody>
-    <c:forEach var="employee" items="${list}">
+    <c:forEach var="employee" items="${empList}">
         <tr>
             <td>${employee.employeeId}</td>
             <td>${employee.firstName}</td>

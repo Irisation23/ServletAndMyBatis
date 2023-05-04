@@ -13,6 +13,7 @@
  	
  	<typeAliases>
 		<typeAlias type="com.example.domain.emp.vo.Employees" alias="Emp"/>
+    <typeAlias type="com.example.domain.dep.vo.Departments" alias="Dep"/>
 	</typeAliases>
 
     <properties resource="db.yml" />
@@ -30,6 +31,7 @@
 
     <mappers>
         <mapper resource="com/example/data/emp/EmployeesMapper.xml" />
+        <mapper resource="com/example/data/dep/DepartmentMapper.xml" />
     </mappers>
 </configuration>
 
