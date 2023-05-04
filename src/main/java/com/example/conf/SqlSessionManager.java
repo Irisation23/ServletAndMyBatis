@@ -10,11 +10,9 @@ public class SqlSessionManager {
     public static SqlSessionFactory sqlSessionFactory;
 
     static {
-        String resource = "configuration.xml";
-        Reader reader = null;
+        String resource = "com/example/data/configuration.xml";
 
-        try {
-            reader = Resources.getResourceAsReader(resource);
+        try (Reader reader = Resources.getResourceAsReader(resource)) {
             sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
         } catch (IOException e) {
             throw new RuntimeException(e);
