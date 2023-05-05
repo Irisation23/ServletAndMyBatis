@@ -9,12 +9,12 @@ public class EmpServiceImpl implements EmpService {
 
     private static final EmpService empService = new EmpServiceImpl();
 
+    public static EmpService getEmpService() {
+        return empService;
+    }
+
     @Override
     public List<Employees> selectAll() {
         return EmployeesDaoImpl.getEmployeesDao().findAllEmployees();
-    }
-
-    public static EmpService getEmpService() {
-        return empService;
     }
 }

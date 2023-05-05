@@ -11,7 +11,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 public class EmployeesDaoImpl implements EmployeesDao {
 
     private static final EmployeesDao employeesDao = new EmployeesDaoImpl();
-    private final SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSessionFactory();
+    private SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSessionFactory();
 
     public static EmployeesDao getEmployeesDao() {
         return employeesDao;

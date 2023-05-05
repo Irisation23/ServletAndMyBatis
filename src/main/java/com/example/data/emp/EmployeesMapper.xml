@@ -5,8 +5,16 @@
 
 <mapper namespace="com.example.data.emp.EmployeesMapper">
   <select id="findAllEmployees" resultType="Emp">
-    SELECT employee_id, first_name, last_name, email, phone_number,
-           hire_date, salary, commission_pct, manager_id, department_id
+    SELECT employee_id,
+           first_name,
+           last_name,
+           email,
+           phone_number,
+           hire_date,
+           salary,
+           commission_pct,
+           manager_id,
+           department_id
     FROM EMPLOYEES;
   </select>
 </mapper>

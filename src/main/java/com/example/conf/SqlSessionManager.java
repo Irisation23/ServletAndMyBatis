@@ -7,10 +7,11 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 public class SqlSessionManager {
+
     public static SqlSessionFactory sqlSessionFactory;
 
     static {
-        String resource = "com/example/data/configuration.xml";
+        String resource = "mybatis-config.xml";
 
         try (Reader reader = Resources.getResourceAsReader(resource)) {
             sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
