@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.data.board.BoardMapper">
+  <insert id="insertBoard" parameterType="Crd">
+    insert into CRUD_APP(title, writer, password, contents, id, hit, FILE_NAME, REG_DATE)
+    values (#{title}, #{writer}, #{password}, #{contents}, #{id}, 0, #{fileName}, now())
+  </insert>
+  <update id="hitPlusCrudApp" parameterType="Crd">
+    UPDATE CRUD_APP
+    SET HIT = #{hit} + 1
+    WHERE no = #{no};
+  </update>
+  <select id="selectBoardList" resultType="Crd">
+    select *
+    from CRUD_APP
+  </select>
+  <select id="searchBoardList" resultType="Crd" parameterType="java.util.Map">
+    select *
+    from(
+          select @rownum:=@rownum+1 rownumber,CRUD_APP.*
+          from CRUD_APP
+          where (@rownum:=0)=0
+            AND ${option} LIKE CONCAT('%',#{keyword},'%')
+          order by no desc
+        ) a
+    where rownumber between 1 and 10
+  </select>
+  <select id="selectCrudApp" resultType="Crd" parameterType="int">
+    SELECT *
+    FROM CRUD_APP
+    WHERE no = #{no}
+  </select>
+</mapper>

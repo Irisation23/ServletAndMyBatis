@@ -15,6 +15,9 @@
     <typeAlias type="com.example.domain.emp.vo.Employees" alias="Emp"/>
     <typeAlias type="com.example.domain.dep.vo.Departments" alias="Dep"/>
     <typeAlias type="com.example.domain.sal.vo.SalGrades" alias="Sal"/>
+    <typeAlias type="com.example.domain.member.vo.Member" alias="Mem" />
+    <typeAlias type="com.example.domain.board.vo.CrudApp" alias="Crd" />
+    <typeAlias type="com.example.domain.comment.vo.Comment" alias="Cmt" />
   </typeAliases>
 
   <environments default="development">
@@ -33,6 +36,9 @@
     <mapper resource="com/example/data/emp/EmployeesMapper.xml" />
     <mapper resource="com/example/data/dep/DepartmentsMapper.xml"/>
     <mapper resource="com/example/data/sal/SalGradesMapper.xml"/>
+    <mapper resource="com/example/data/member/MemberMapper.xml" />
+    <mapper resource="com/example/data/board/BoardMapper.xml" />
+    <mapper resource="com/example/data/comment/CommentMapper.xml" />
   </mappers>
 </configuration>
 

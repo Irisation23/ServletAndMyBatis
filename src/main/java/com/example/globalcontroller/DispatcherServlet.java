@@ -17,6 +17,7 @@ public class DispatcherServlet extends HttpServlet {
 
         request.setCharacterEncoding("UTF-8");
         String cmd = request.getParameter("cmd");
+
         ProcessController pc = MapperServlet.getMapper(cmd);
         ForwardController fc = pc.execute(request, response);
 
@@ -24,7 +25,7 @@ public class DispatcherServlet extends HttpServlet {
             response.sendRedirect(fc.getPath());
         } else {
             RequestDispatcher rd = request.getRequestDispatcher(fc.getPath());
-            rd.forward(request, response);// /Web/list.do
+            rd.forward(request, response);
         }
     }
 

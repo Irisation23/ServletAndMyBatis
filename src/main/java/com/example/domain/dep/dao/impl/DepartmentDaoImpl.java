@@ -6,7 +6,6 @@ import com.example.domain.dep.dao.DepartmentDao;
 import com.example.domain.dep.vo.Departments;
 import java.util.List;
 import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
 
 public class DepartmentDaoImpl implements DepartmentDao {
 
